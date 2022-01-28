@@ -11,9 +11,9 @@ const userController = {
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err)
-            res.status(500).json(err)
+            res.status(400).json(err)
         });
-    },
+      },
 
     getUserById({ params }, res) {
         User.findOne({ _id: params.id })
@@ -29,7 +29,7 @@ const userController = {
            .then(dbUserData => res.json(dbUserData))
            .catch(err => {
                console.log(err)
-               res.status(500).json(err)
+               res.status(400).json(err)
         });
      },
 
@@ -87,7 +87,7 @@ const userController = {
          .then(dbUserData => res.json(dbUserData))
          .catch(err => res.json(err));
      }
-     
+
 };
 
 module.exports = userController
